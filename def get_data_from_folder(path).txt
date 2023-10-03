@@ -1,0 +1,17 @@
+def get_data_from_folder(path):
+  data=[]
+  for class_name in class_names:
+    try:
+      files=glob.glob(path+"/"+class_name+"/")
+      for f in files:
+        img = cv2.imread(f)
+        img = cv2.resize(img,(IMG_SIZE,IMG_SIZE))
+        data.append([np.array(img),class_names.index(class_name)])
+    except:
+      pass
+    np.random.shuffle(data)
+    return data
+
+DATASET_DIR = "/content/drive/MyDrive/covidimage/Data/train"
+
+os.listdir(DATASET_DIR)

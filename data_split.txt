@@ -1,0 +1,36 @@
+import tensorflow as tf
+from tensorflow.keras.preprocessing import image_dataset_from_directory
+
+image_size=(224,224)
+batch_size=32
+train_ds= image_dataset_from_directory(
+    "/content/drive/MyDrive/covidimage/Data/train",
+    labels ="inferred",
+    label_mode= 'int',
+    validation_split=0.2,
+    subset="training",
+    seed =1337,
+    image_size=image_size,
+    batch_size=batch_size,
+    )
+val_ds= image_dataset_from_directory(
+    "/content/drive/MyDrive/covidimage/Data/train",
+    labels="inferred",
+    label_mode='int',
+    validation_split=0.2,
+    subset="validation",
+    seed =1337,
+    image_size=image_size,
+    batch_size=batch_size,
+    )
+
+
+
+import matplotlib.pyplot as plt
+plt.figure(figsize=(10,10))
+for images,labels in train_ds.take(1):
+  for i in range(9):
+    ax=plt.subplot(3,3,i+1)
+    plt.imshow(images[i].numpy().astype("uint8"))
+    plt.title(int(labels[i]))
+    plt.axis("off")

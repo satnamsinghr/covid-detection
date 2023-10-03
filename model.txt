@@ -1,0 +1,47 @@
+model = Sequential()
+model.add(Conv2D(32, (3, 3), input_shape=INPUT_SHAPE))
+model.add(Activation('relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+
+model.add(Conv2D(32, (3, 3)))
+model.add(Activation('relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+
+
+model.add(Conv2D(64,(3,3)))
+model.add(Activation("relu"))
+model.add(Conv2D(250,(3,3)))
+model.add(Activation("relu"))
+
+model.add(Conv2D(128,(3,3)))
+model.add(Activation("relu"))
+model.add(AvgPool2D(2,2))
+model.add(Conv2D(64,(3,3)))
+model.add(Activation("relu"))
+model.add(AvgPool2D(2,2))
+
+model.add(Conv2D(256,(2,2)))
+model.add(Activation("relu"))
+model.add(MaxPool2D(2,2))
+
+model.add(Flatten())
+model.add(Dense(32))
+model.add(Dropout(0.25))
+model.add(Dense(1))
+model.add(Activation("sigmoid"))
+
+
+IMG_W = 150
+IMG_H = 150
+CHANNELS = 3
+
+INPUT_SHAPE = (IMG_W, IMG_H, CHANNELS)
+NB_CLASSES = 2
+EPOCHS = 48
+BATCH_SIZE = 6
+
+model.compile(loss='binary_crossentropy',
+              optimizer='rmsprop',
+              metrics=['accuracy'])
+
+model.summary()
