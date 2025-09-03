@@ -5,6 +5,8 @@
 **Contact:** satnamsinghramavath9320@gmail.com
 **GitHub:** https://github.com/satnamsinghr
 
+---
+
 ## Project Summary
 
 This project implements a deep learning-based CNN model to detect COVID-19 infections from chest X-ray images. By leveraging convolutional layers and careful preprocessing, the model distinguishes between COVID-19, pneumonia, and normal cases with high accuracy.
