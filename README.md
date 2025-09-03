@@ -1,4 +1,4 @@
-#COVID-19 Detection using Convolutional Neural Networks (CNN)
+# COVID-19 Detection using Convolutional Neural Networks (CNN)
 
 **Repository:** COVID-Detection 
 **Author:** Satnam Singh Ramavath 
