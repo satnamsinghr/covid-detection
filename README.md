@@ -36,9 +36,11 @@ The work demonstrates the potential of AI in medical imaging, especially during 
 
 ## Dataset
 
-We used publicly available Chest X-ray datasets that contain images for COVID-19, pneumonia, and healthy lungs. The dataset is not uploaded here due to size. Instead, use the following options in Colab:
+We used publicly available Chest X-ray datasets that contain images for COVID-19, pneumonia, and healthy lungs. \
+The dataset is not uploaded here due to size. \
+Instead, use the following options in Colab:\
 
-Download with Kaggle API:
+Download with Kaggle API:\
 
 !pip install -q kaggle
 
@@ -46,8 +48,8 @@ Download with Kaggle API:
 
 ## Upload kaggle.json (from Kaggle account)
 
-!kaggle datasets download -d -p /content/data --unzip
-Or, load from Google Drive:
+!kaggle datasets download -d -p /content/data --unzip\
+Or, load from Google Drive:\
 from google.colab import drive drive.mount('/content/drive')
 
 ---
@@ -102,12 +104,12 @@ from google.colab import drive drive.mount('/content/drive')
 ---
 ## Run locally
 
-Clone repo:
-git clone https://github.com/satnamsinghr/COVID-Detection.git
-cd COVID-Detection
-Create virtual environment & install requirements:
-python -m venv venv source venv/bin/activate # Linux/Mac venv\Scripts\activate # Windows pip install -r requirements.txt
-Run Jupyter notebook:
+Clone repo:\
+git clone https://github.com/satnamsinghr/COVID-Detection.git\
+cd COVID-Detection\
+Create virtual environment & install requirements:\
+python -m venv venv source venv/bin/activate # Linux/Mac venv\Scripts\activate # Windows pip install -r requirements.txt\
+Run Jupyter notebook:\
 jupyter notebook notebooks/COVID_Detection.ipynb
 
 ---
